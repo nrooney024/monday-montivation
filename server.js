@@ -15,49 +15,49 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  else if (page == '/otherpage') {
-    fs.readFile('otherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
-  else if (page == '/otherotherpage') {
-    fs.readFile('otherotherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
+  // else if (page == '/otherpage') {
+  //   fs.readFile('otherpage.html', function(err, data) {
+  //     res.writeHead(200, {'Content-Type': 'text/html'});
+  //     res.write(data);
+  //     res.end();
+  //   });
+  // }
+  // else if (page == '/otherotherpage') {
+  //   fs.readFile('otherotherpage.html', function(err, data) {
+  //     res.writeHead(200, {'Content-Type': 'text/html'});
+  //     res.write(data);
+  //     res.end();
+  //   });
+  // }
   else if (page == '/api') {
     res.writeHead(200, {'Content-Type': 'application/json'});
-        const arrayOfURLs = ['https://www.youtube.com/watch?v=dV9worye5g0', 'https://www.youtube.com/watch?v=3sK3wJAxGfs', 'https://www.youtube.com/watch?v=01CL029k7pU']
+        const arrayOfURLs = ['https://www.youtube.com/embed?v=dV9worye5g0', 'https://www.youtube.com/embed?v=3sK3wJAxGfs', 'https://www.youtube.com/embed?v=01CL029k7pU']
         let randomURL = arrayOfURLs[Math.floor(Math.random() * arrayOfURLs.length)]
         const objToJson = {
           randomURL : randomURL
         }
         res.end(JSON.stringify(objToJson));
-    if('student' in params){
-      if(params['student']== 'leon'){
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        const objToJson = {
-          name: "leon",
-          status: "Boss Man",
-          currentOccupation: "Baller"
-        }
-        res.end(JSON.stringify(objToJson));
-      }//student = leon
-      else if(params['student'] != 'leon'){
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        const objToJson = {
-          name: "unknown",
-          status: "unknown",
-          currentOccupation: "unknown"
-        }
-        res.end(JSON.stringify(objToJson));
-      }//student != leon
-    }
-  }
+    // if('student' in params){
+    //   if(params['student']== 'leon'){
+    //     res.writeHead(200, {'Content-Type': 'application/json'});
+    //     const objToJson = {
+    //       name: "leon",
+    //       status: "Boss Man",
+    //       currentOccupation: "Baller"
+    //     }
+    //     res.end(JSON.stringify(objToJson));
+    //   }//student = leon
+    //   else if(params['student'] != 'leon'){
+    //     res.writeHead(200, {'Content-Type': 'application/json'});
+    //     const objToJson = {
+    //       name: "unknown",
+    //       status: "unknown",
+    //       currentOccupation: "unknown"
+    //     }
+    //     res.end(JSON.stringify(objToJson));
+    //   }//student != leon
+    // }//student if
+  }//else if
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
       res.write(data);
