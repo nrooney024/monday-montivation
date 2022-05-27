@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
   // }
   else if (page == '/api') {
     res.writeHead(200, {'Content-Type': 'application/json'});
-        const arrayOfURLs = ['https://www.youtube.com/embed?v=dV9worye5g0', 'https://www.youtube.com/embed?v=3sK3wJAxGfs', 'https://www.youtube.com/embed?v=01CL029k7pU']
+        const arrayOfURLs = ['https://www.youtube.com/embed/dV9worye5g0', 'https://www.youtube.com/embed/3sK3wJAxGfs', 'https://www.youtube.com/embed/01CL029k7pU']
         let randomURL = arrayOfURLs[Math.floor(Math.random() * arrayOfURLs.length)]
         const objToJson = {
           randomURL : randomURL
