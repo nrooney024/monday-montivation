@@ -4,6 +4,7 @@ const url = require('url');
 const querystring = require('querystring');
 const figlet = require('figlet')
 
+// Feeding homepage
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
   const params = querystring.parse(url.parse(req.url).query);
@@ -14,61 +15,40 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  }
-  // else if (page == '/otherpage') {
-  //   fs.readFile('otherpage.html', function(err, data) {
-  //     res.writeHead(200, {'Content-Type': 'text/html'});
-  //     res.write(data);
-  //     res.end();
-  //   });
-  // }
-  // else if (page == '/otherotherpage') {
-  //   fs.readFile('otherotherpage.html', function(err, data) {
-  //     res.writeHead(200, {'Content-Type': 'text/html'});
-  //     res.write(data);
-  //     res.end();
-  //   });
-  // }
-  else if (page == '/api') {
+  
+
+  // Feeding YouTube videos from server to the user
+  }else if (page == '/api') {
     res.writeHead(200, {'Content-Type': 'application/json'});
+
+        // Arrays being hosted
         const arrayOfURLs = ['https://www.youtube.com/embed/dV9worye5g0', 'https://www.youtube.com/embed/3sK3wJAxGfs', 'https://www.youtube.com/embed/01CL029k7pU']
+        
+        // Randomizing the YouTube video being sent to the user
         let randomURL = arrayOfURLs[Math.floor(Math.random() * arrayOfURLs.length)]
+        
+        // Feeding out the YouTube video that was randomly selected
         const objToJson = {
           randomURL : randomURL
         }
         res.end(JSON.stringify(objToJson));
-    // if('student' in params){
-    //   if(params['student']== 'leon'){
-    //     res.writeHead(200, {'Content-Type': 'application/json'});
-    //     const objToJson = {
-    //       name: "leon",
-    //       status: "Boss Man",
-    //       currentOccupation: "Baller"
-    //     }
-    //     res.end(JSON.stringify(objToJson));
-    //   }//student = leon
-    //   else if(params['student'] != 'leon'){
-    //     res.writeHead(200, {'Content-Type': 'application/json'});
-    //     const objToJson = {
-    //       name: "unknown",
-    //       status: "unknown",
-    //       currentOccupation: "unknown"
-    //     }
-    //     res.end(JSON.stringify(objToJson));
-    //   }//student != leon
-    // }//student if
-  }//else if
-  else if (page == '/css/style.css'){
+  
+  // Feeding CSS
+  }else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
       res.write(data);
       res.end();
     });
+   
+  // Feeding JS
   }else if (page == '/js/main.js'){
     fs.readFile('js/main.js', function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/javascript'});
       res.write(data);
       res.end();
     });
+  
+  // Feeding clean/designed error page
   }else{
     figlet('404!!', function(err, data) {
       if (err) {
