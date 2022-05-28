@@ -1,25 +1,17 @@
-// document.querySelector('#clickMe').addEventListener('click', makeReq)
-
-// async function makeReq(){
-
-//   const userName = document.querySelector("#userName").value;
-//   const res = await fetch(`/api?student=${userName}`)
-//   const data = await res.json()
-
-//   console.log(data);
-//   document.querySelector("#personName").textContent = data.name
-//   document.querySelector("#personStatus").textContent = data.status
-//   document.querySelector("#personOccupation").textContent = data.currentOccupation
-// }
-
+// Setting iframe on click of the button
 document.querySelector("#clickMe").addEventListener("click", getRandomURL)
 
+// Inputting randomized URL from the server to iframe
 async function getRandomURL(){
-  const userName = document.querySelector("#userName").value;
+
+  // Pulling data from server API
   const res = await fetch(`/api`);
   const data = await res.json();
   
+  // Displaying JSON in console
   console.log(data);
+
+  // Adding randomized URL to the src attribute of the iframe
   document.querySelector("#inputIframe").setAttribute("src", data.randomURL);
   
 }
