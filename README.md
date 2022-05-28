@@ -1,33 +1,23 @@
-# monday-montivation
+# Monday Motivation
 
+Monday Motivation is for the people who got this, but don't know they got this yet. At the click of a button, Monday Motivation will pull together a motivational YouTube video at random to help the user get through those days that they're not feeling it. 
 
+## How It's Made:
 
+**Tech used:** HTML, CSS, JavaScript, Node.js
 
+Using Node.js, we built a server that houses a list of URLs to motivational YouTube videos. On the click of the button, we pull a URL at random and input it into our iframe to display the motivational video selected to the user.
 
+## Optimizations
 
+At first, we were thinking of hosting an array of iframes on the server, and then on the click of the button we would drop the iframe into the HTML. We decided that it was not necessary to replace the whole iframe and instead we kept a templated iframe in the HTML and added a new src attribute every time someone clicks the button. This way, we only need to keep an array of URLs instead of an array of iframes, and we would only need to update the src attribute, instead of the whole iframe.
 
-______________________
+## Lessons Learned:
 
-## Gameplan
+Realizing that the embed URL to a YouTube video is different than the watch URL was the equivalent of someone hiding in a desert. It was hiding in plain sight, but when we realized it, it became one of those "ohhhhh that makes sense" moments.
 
-- Description: Monday motivation is where you click a button and get a random YouTube video that will get you amped for the week
+## Examples:
 
-- Have one iframe
-- Iterate through a list of URLs and input the URL to the iframe source
-- On click, add a random URL to the iframe
-- Make it work, then input into an HTML5up template
+Take a look at these examples that we have in our portfolios:
 
-- Find three videos (take from Discord) - David ## DONE
-    - https://www.youtube.com/watch?v=dV9worye5g0 (Eric Thomas | What will You do with It? (Eric Thomas Motivation)
-    - https://www.youtube.com/watch?v=3sK3wJAxGfs ("This ONE SIMPLE Secret Will Completely CHANGE YOUR LIFE Today!"| Navy Seal William McRaven)
-    - https://www.youtube.com/watch?v=01CL029k7pU (I Still Have A Soul -HBO Boxing - hd)
-- convert list into JSON (don't need to convert the whole list to JSON, just the part we want to return)
-- Randomizing the selection of the videos using Math.random()
-- Build the iframe template (which is just a div lol) - Nick ## DONE
-- Figure out how to swap the src - Brooke
-- Find out how to make it work on the click of a button - Antero
-
-
-## Down the road
-- Display none the iframe and on click, display it
-- Potential template https://html5up.net/highlights 
+**Coders And (from Nick Rooney):** (https://github.com/nrooney024/coders-and/)
