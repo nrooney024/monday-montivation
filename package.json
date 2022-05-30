@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/harshabc4/monday-montivation/issues"
   },
-  "homepage": "https://github.com/harshabc4/monday-montivation#readme"
+  "homepage": "https://github.com/harshabc4/monday-montivation#readme",
+  "dependencies": {
+    "figlet": "^1.5.2"
+  }
 }
