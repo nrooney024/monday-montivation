@@ -1,0 +1,20 @@
+{
+  "name": "monday-montivation",
+  "version": "1.0.0",
+  "description": "Monday Motivation is for the people who got this, but don't know they got this yet. At the click of a button, Monday Motivation will pull together a motivational YouTube video at random to help the user get through those days that they're not feeling it.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshabc4/monday-montivation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshabc4/monday-montivation/issues"
+  },
+  "homepage": "https://github.com/harshabc4/monday-montivation#readme"
+}
