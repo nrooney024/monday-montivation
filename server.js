@@ -34,20 +34,37 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify(objToJson));
   
   // Feeding CSS
-  }else if (page == '/css/style.css'){
-    fs.readFile('css/style.css', function(err, data) {
+  }else if (page == '/css/bootstrap.min.css'){
+    fs.readFile('css/bootstrap.min.css', function(err, data) {
+      res.write(data);
+      res.end();
+    });
+  }else if (page == '/css/templatemo-style.css'){
+    fs.readFile('css/templatemo-style.css', function(err, data) {
       res.write(data);
       res.end();
     });
    
+  
   // Feeding JS
   }else if (page == '/js/main.js'){
     fs.readFile('js/main.js', function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/javascript'});
       res.write(data);
       res.end();
+  });
+  }else if (page == 'js/jquery.min.js'){
+    fs.readFile('js/jquery.min.js', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'text/javascript'});
+      res.write(data);
+      res.end();
     });
-  
+  }else if (page == 'js/templatemo-script.js'){
+    fs.readFile('js/templatemo-script.js', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'text/javascript'});
+      res.write(data);
+      res.end();
+    });
   // Feeding clean/designed error page
   }else{
     figlet('404!!', function(err, data) {
