@@ -4,8 +4,10 @@ const url = require('url');
 const querystring = require('querystring');
 const figlet = require('figlet')
 const express = require('express')
-
 const app = express()
+
+// Feeding static images
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Feeding homepage
 const server = http.createServer((req, res) => {
