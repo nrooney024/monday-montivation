@@ -1,4 +1,11 @@
-# Monday Motivation
+
+<h1 align="center"><a target="_blank" href="https://monday-motivation.herokuapp.com/">Motivation Monday</a></h1>
+        <br />
+        <a target="_blank" href="https://monday-motivation.herokuapp.com/">
+        <p align="center">
+            <img src="https://user-images.githubusercontent.com/97787737/171951597-2bf1c9de-a0dc-4175-8265-6d87874f9cba.png" width="50%" alt="motivational video website"/>
+        </p>
+        </a>
 
 Monday Motivation is for the people who got this, but don't know they got this yet. At the click of a button, Monday Motivation will pull together a motivational YouTube video at random to help the user get through those days that they're not feeling it. 
 
