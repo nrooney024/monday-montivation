@@ -30,8 +30,22 @@ h3 {
     font-size: 1.3rem;
 }
 
-div.row {
+.video {
     justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.video button {
+    width: 25%;
+    height: 6em;
+    margin-top: 2em;
+    background: black;
+    color: white;
+}
+
+.video iframe {
+    width: 70%;
 }
 
 .tm-site-logo {
