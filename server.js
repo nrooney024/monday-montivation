@@ -7,7 +7,6 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     res.render('index.ejs')
-    console.log()
 })
 
 app.get('/api', (req, res) => {
